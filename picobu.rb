@@ -6,6 +6,12 @@ class Picobu < Formula
 
   depends_on "rust" => :build
 
+  bottle do
+    root_url "https://github.com/Divoolej/picobu/releases/download/1.0.4"
+    cellar :any_skip_relocation
+    sha256 "11ceb8d218b06b8baba97f913e9f630a65a60cca63ef21f353ea09aa1ac160ea" => :mojave
+  end
+
   def install
     system "cargo", "install", "--root", prefix, "--path", "."
   end
